@@ -1,0 +1,87 @@
+================================================================================
+GPU与加速支持综合检测报告 (v2.0)
+生成时间: 2025-03-28 18:46:01
+================================================================================
+
+[系统信息]
+操作系统: Windows
+硬件架构: AMD64
+处理器: AMD64 Family 16 Model 4 Stepping 3, AuthenticAMD
+Python版本: 3.10.11
+PyTorch版本: 2.6.0+cu118
+TensorFlow版本: 2.19.0
+OpenCV版本: 4.11.0
+CPU核心数: 4
+总内存: 16.00 GB
+检测工具版本: 2.0
+
+[加速支持]
+
+CUDA:
+  可用: False
+
+ROCm:
+  可用: False
+
+Metal:
+  可用: False
+
+OpenCL:
+  可用: True
+  设备列表: []
+
+Intel oneAPI:
+  可用: True
+  版本: 0.19.0
+  设备列表: []
+
+OpenCV内置加速:
+  SIMD:
+    SSE: True
+    SSE2: True
+    SSE3: True
+    SSSE3: False
+    SSE4_1: False
+    SSE4_2: False
+    AVX: True
+    AVX2: True
+    NEON: False
+
+Numba:
+  可用: True
+  版本: 0.61.0
+  cuda支持: False
+
+TensorFlow GPU:
+  可用: False
+
+CuPy:
+  可用: True
+  版本: 13.4.1
+
+其他加速库:
+  Dask版本: 2025.3.0
+  Cython版本: 3.0.12
+  MPI支持: 通过mpi4py可用
+  Ray版本: 2.44.1
+
+[优化建议]
+1. ℹ️ 检测到OpenCL CPU设备，可以使用OpenCL进行CPU加速
+2. ✅ 检测到Intel oneAPI支持，可以使用Intel GPU加速: 安装Intel扩展 (`pip install dpctl`)
+3. ✅ 检测到Numba，可以使用JIT编译加速Python代码: 使用`@numba.jit`装饰器优化关键函数
+4. ✅ CuPy已安装，可以使用CuPy加速NumPy兼容的GPU计算
+5. ✅ OpenCV已启用CPU SIMD指令集: SSE, SSE2, SSE3, AVX, AVX2
+
+[推荐安装命令]
+------------------------------
+PyTorch: pip install torch torchvision torchaudio
+TensorFlow: pip install tensorflow
+TensorFlow GPU版: pip install tensorflow-gpu
+OpenCV (带CUDA支持): pip install opencv-python-headless opencv-contrib-python-headless
+Numba: pip install numba
+CuPy: pip install cupy-cuda11x (将11x替换为你的CUDA版本)
+Dask: pip install dask distributed
+Cython: pip install cython
+MPI支持: pip install mpi4py
+Ray: pip install ray
+Tabulate: pip install tabulate
